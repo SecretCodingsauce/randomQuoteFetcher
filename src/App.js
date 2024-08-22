@@ -63,7 +63,7 @@ useEffect(()=>{
       <div id='author'>~{author}</div>
       <div id='buttons'>
       <div id='new-quote' onClick={newQuote}>newQuote</div>
-      <a href={tweet} target='_blank' id='tweet-quote'>tweetQuote</a>
+      <a href="https://example.com" target="_blank" rel="noreferrer" id='tweet-quote'>tweetQuote</a>
       </div>
       
 
