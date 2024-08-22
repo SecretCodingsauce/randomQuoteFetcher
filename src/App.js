@@ -1,12 +1,25 @@
 
 import { useEffect, useRef, useState } from 'react';
 import './App.css';
+
 import axios from 'axios';
 
 
 
 function App() {
 const url="https://api.api-ninjas.com/v1/quotes?"
+
+const bodyStyle = {
+  fontFamily: "Arial, sans-serif",
+  backgroundColor: '#f0f0f0',
+  margin: 0,
+  padding: 0,
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  height: "100vh"
+}
+
 
 
 const [quote,setQuote]=useState("")
@@ -44,12 +57,14 @@ useEffect(()=>{
 )
 
   return (
-    <div className="App">
-     <div id='quote-box'className=''>
+    <div style={bodyStyle} className="App">
+     <div id='quote-box'>
       <div id='text'>{quote}</div>
-      <div id='author'>{author}</div>
-      <button id='new-quote' onClick={newQuote}>newQuote</button>
+      <div id='author'>~{author}</div>
+      <div id='buttons'>
+      <div id='new-quote' onClick={newQuote}>newQuote</div>
       <a href={tweet} target='_blank' id='tweet-quote'>tweetQuote</a>
+      </div>
       
 
      </div>
