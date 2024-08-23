@@ -7,7 +7,7 @@ import axios from 'axios';
 
 
 function App() {
-const url="https://api.api-ninjas.com/v1/quotes?"
+const url="http://api.api-ninjas.com/v1/quotes?"
 
 const bodyStyle = {
   fontFamily: "Arial, sans-serif",
