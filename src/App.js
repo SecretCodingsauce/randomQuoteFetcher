@@ -25,7 +25,9 @@ const bodyStyle = {
 const [quote,setQuote]=useState("")
 const [author,setAuthor]=useState("")
 const [run,setRun]=useState(false)
+const [loading,setLoading]=useState(true)
 const hasEffectRun=useRef(false)
+
 
 let tweet=`https://twitter.com/intent/tweet?text=${encodeURIComponent(quote)}`
 const newQuote=()=>{
@@ -44,7 +46,8 @@ useEffect(()=>{
   }})
   .then((res)=>{
     setQuote(res.data[0].quote)
-    setAuthor(res.data[0].author)}
+    setAuthor(res.data[0].author)
+    setLoading(false)}
     
   ).catch((err)=>console.error(err))
   
@@ -59,6 +62,7 @@ useEffect(()=>{
   return (
     <div style={bodyStyle} className="App">
      <div id='quote-box'>
+      {loading && <div id='loading'>loading...</div>}
       <div id='text'>{quote}</div>
       <div id='author'>~{author}</div>
       <div id='buttons'>

@@ -56,3 +56,11 @@
   padding-inline: 50px;
 }
 
+#loading{
+  
+  padding: 20vh;
+  height: 10vh;
+  font-size: large;
+  font-weight: bold;
+  color: white;
+}
