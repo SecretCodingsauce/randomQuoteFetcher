@@ -56,7 +56,7 @@
   padding-inline: 50px;
 }
 
-#loading{
+.loading-error{
   
   padding: 20vh;
   height: 10vh;

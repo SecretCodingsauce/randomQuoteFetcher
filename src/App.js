@@ -23,6 +23,7 @@ const bodyStyle = {
 
 
 const [quote,setQuote]=useState("")
+const [err,setErr]=useState(null)
 const [author,setAuthor]=useState("")
 const [run,setRun]=useState(false)
 const [loading,setLoading]=useState(true)
@@ -49,7 +50,10 @@ useEffect(()=>{
     setAuthor(res.data[0].author)
     setLoading(false)}
     
-  ).catch((err)=>console.error(err))
+  ).catch((error)=>{
+    console.error(error)
+    setLoading(false)
+    setErr(error.message);})
   
 
   
@@ -62,7 +66,8 @@ useEffect(()=>{
   return (
     <div style={bodyStyle} className="App">
      <div id='quote-box'>
-      {loading && <div id='loading'>loading...</div>}
+      {loading && <div className='loading-error'>loading...</div>}
+      {err && <div className='loading-error'>{err}</div>}
       <div id='text'>{quote}</div>
       <div id='author'>~{author}</div>
       <div id='buttons'>
