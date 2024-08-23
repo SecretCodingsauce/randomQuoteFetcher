@@ -7,7 +7,7 @@ import axios from 'axios';
 
 
 function App() {
-const url="https://api.api-ninjas.com/v1/quotes?"
+const url="https://dummyjson.com/quotes/random"
 
 const bodyStyle = {
   fontFamily: "Arial, sans-serif",
@@ -42,12 +42,10 @@ useEffect(()=>{
   }
     
     
-    axios.get(url, {headers: {
-    'X-Api-Key': '/XJUfaMN9+D87rJ4TjZiJA==KmHKpQdaevhrI8IV',
-  }})
+    axios.get(url)
   .then((res)=>{
-    setQuote(res.data[0].quote)
-    setAuthor(res.data[0].author)
+    setQuote(res.data.quote)
+    setAuthor(res.data.author)
     setLoading(false)}
     
   ).catch((error)=>{
