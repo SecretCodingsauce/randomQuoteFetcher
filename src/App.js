@@ -27,7 +27,7 @@ const [err,setErr]=useState(null)
 const [author,setAuthor]=useState("")
 const [run,setRun]=useState(false)
 
-const hasEffectRun=useRef(false)
+
 
 
 let tweet=`https://twitter.com/intent/tweet?text=${encodeURIComponent(quote)}`
@@ -36,12 +36,7 @@ const newQuote=()=>{
 }
 useEffect(()=>{
 
-  if(!hasEffectRun.current){
-    hasEffectRun.current=true;
-    return;
-  }
-    
-    
+     
     axios.get(url)
   .then((res)=>{
     setQuote(res.data.quote)
